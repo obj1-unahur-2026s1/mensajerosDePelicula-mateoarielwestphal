@@ -1,9 +1,31 @@
-import example.pepita
+import example.*
 
 describe "group of tests for pepita" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "roberto no puede pasar en la matrix por que no tiene datos" {
+   roberto.asignar_peso(90)
+   paquete.pago()
+   roberto.asignar_vehiculo(camion)
+   camion.cambiar_acoplado(1)
+   assert.equals(true, matrix.puede_pasar(roberto))
+  }
+
+  test "roberto puede pasar" {
+   roberto.asignar_peso(90)
+   paquete.pago()
+   roberto.asignar_vehiculo(camion)
+   camion.cambiar_acoplado(1)
+   assert.equals(true, brooklyn.puede_pasar(roberto))
+  }
+
+  test "neo no puede pasar a la matrix" {
+    neo.cargar_credito()
+    paquete.no_pago()
+    assert.equals(false, matrix.puede_pasar(neo))
+  }
+
+  test "tiene que dar true" {
+    assert.equals(90, empresa.peso_ultimo())
   }
 
 }
