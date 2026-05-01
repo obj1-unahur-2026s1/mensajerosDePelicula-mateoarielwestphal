@@ -28,4 +28,12 @@ describe "group of tests for pepita" {
     assert.equals(90, empresa.peso_ultimo())
   }
 
+  test "tiene que ser true" {
+    empresa.contratar(neo)
+    empresa.contratar(roberto)
+    empresa.contratar(norris)
+    paqueton.pagar(3000)
+   assert.equals(true, empresa.sobrepeso())
+  }
+
 }
